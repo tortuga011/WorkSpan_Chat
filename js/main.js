@@ -14,10 +14,13 @@ function openChannel(evt, channel) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 
-window.onload = function () {
+
+function scrollToBottom() {
   let El = document.querySelector(".messages");
   El.scrollTop = El.scrollHeight - El.clientHeight;
 }
+
+window.onload = scrollToBottom();
 
 function addMsg() {
   let messages = document.querySelector(".messages");
@@ -45,6 +48,7 @@ let textarea = document.querySelector("textarea");
     if (event.keyCode === 13) {
       addMsg();
       textarea.value = '';
+      scrollToBottom();
     }
   });
 
