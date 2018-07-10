@@ -31,10 +31,10 @@
 
 .tablinks.back {
   padding: 44px 16px;
-  background: #EEEFF4;
+  background: $back_tab_background;
   font-size: 26px;
   &:hover {
-    background: $border-color;
+    background: $border_color;
   }
 }
 

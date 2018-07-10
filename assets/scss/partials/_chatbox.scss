@@ -14,7 +14,7 @@
 .chat-header {
   display: flex;
   padding: 10px 20px 10px 0;
-  border-bottom: 1px solid #ebebed;
+  border-bottom: 1px solid $border_color_2;
   align-items: center;
   .user-photo {
     width: 50px;
@@ -30,9 +30,9 @@
     margin-left: auto;
     cursor: pointer;
     font-size: 26px;
-    color: #aeaeae;
+    color: $close_icon_color;
     &:hover {
-      color: #393e42;
+      color: $msg_font_color;
     }
   }
 }
@@ -117,7 +117,7 @@
       font-family: "Material Icons";
       font-style: normal;
       font-weight: normal;
-      color: #9BD6DD;
+      color: $check_icon_color;
       font-size: 22px;
       display: table-cell;
       vertical-align: bottom;
@@ -138,7 +138,7 @@
 }
 
 .chat-form {
-  border-top: 2px solid #ebebed;
+  border-top: 2px solid $border_color_2;
   margin-left: -10px;
   textarea {
     width: 100%;
