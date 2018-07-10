@@ -1,0 +1,47 @@
+
+.tab {
+  @include flex;
+  border-right: 1px solid $gray;
+  background: $lightgray_background;
+  min-width: 100px;
+  button {
+    display: block;
+    background: $lightgray_background;
+    color: $msg_font_color;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-bottom: 1px solid $gray;
+    z-index: 10;
+    &:hover {
+      background: $lightblue_background;;
+    }
+  }
+  button.active {
+    background: $white;
+    border-right: none;
+    width: 102%;
+    z-index: 10;
+    transition: all .5s;
+  }
+}
+
+.tablinks.back {
+  padding: 44px 16px;
+  background: #EEEFF4;
+  font-size: 26px;
+  &:hover {
+    background: $border-color;
+  }
+}
+
+.tablinks {
+  .user-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+}

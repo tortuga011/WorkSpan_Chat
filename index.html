@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>WorkSpan Chat App</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="WorkSpan Test" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <!--This is a list of message channels-->
+    <div class="tab">
+      <button class="tablinks back">
+        <i class="material-icons">arrow_back</i>
+      </button>
+      <button id="defaultOpen" class="tablinks" onclick="openChannel(event, 'channel_1')">
+        <img class="user-photo" src="http://emilcarlsson.se/assets/harveyspecter.png" alt="">
+      </button>
+      <button class="tablinks" onclick="openChannel(event, 'channel_2')">
+        <img class="user-photo" src="http://emilcarlsson.se/assets/rachelzane.png" alt="" />
+      </button>
+      <button class="tablinks" onclick="openChannel(event, 'channel_3')">
+        <img class="user-photo" src="http://emilcarlsson.se/assets/donnapaulsen.png" alt="" />
+      </button>
+    </div>
+    <!--This is a chat detail area with messages displayed-->
+    <div class="chatbox">
+      <div id="channel_1" class="chatlogs">
+        <div class="chat-header">
+          <img class="user-photo" src="http://emilcarlsson.se/assets/harveyspecter.png" alt="">
+          <p class="name">Harvey Specter</p>
+          <i class="material-icons">close</i>
+        </div>
+        <div class="message-box">
+          <div class="messages">
+            <div class="chat friend">
+              <img class="user-photo" src="http://emilcarlsson.se/assets/harveyspecter.png" alt="">
+              <div class="message-block">
+                <p class="chat-message">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                <p class="time">02:12 pm</p>
+              </div>
+            </div>
+            <div class="chat friend">
+              <img class="user-photo" src="http://emilcarlsson.se/assets/harveyspecter.png" alt="">
+              <div class="message-block">
+                <p class="chat-message">Lorem ipsum dolor sit.</p>
+                <p class="time">02:12 pm</p>
+              </div>
+            </div>
+            <div class="date">Monday, dec-18</div>
+            <div class="chat self">
+              <div class="message-block">
+                <p class="chat-message">Lorem, ipsum dolor.</p>
+                <p class="time">02:12 pm</p>
+              </div>
+            </div>
+            <div class="chat self">
+              <div class="message-block">
+                <p class="chat-message">Lorem, ipsum dolor.</p>
+                <p class="time">02:12 pm</p>
+              </div>
+            </div>
+            <div class="chat friend">
+              <img class="user-photo" src="http://emilcarlsson.se/assets/harveyspecter.png" alt="">
+              <div class="message-block">
+                <p class="chat-message">Lorem ipsum dolor sit.</p>
+                <p class="time">02:12 pm</p>
+              </div>
+            </div>
+            <div class="date">Tuesday, dec-19</div>
+            <!--This message block can simulate deleting of msg-->
+            <div id="deletable" class="chat self">
+              <div class="buttons">
+                <button>
+                  <i class="material-icons">edit</i>
+                </button>
+                <button onclick="deleteMsg()">
+                  <i class="material-icons">delete_outline</i>
+                </button>
+              </div>
+              <div class="message-block">
+                <p class="chat-message">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias modi officia vitae, corporis architecto a eveniet autem quaerat suscipit quisquam.</p>
+                <p class="time">02:12 pm</p>
+              </div>
+            </div>
+            <div class="chat friend">
+              <img class="user-photo" src="http://emilcarlsson.se/assets/harveyspecter.png" alt="">
+              <div class="message-block">
+                <p class="chat-message">Lorem ipsum dolor sit amet.
+                </p>
+                <p class="time">02:12 pm</p>
+              </div>
+            </div>
+          </div>
+          <!--This user input can simulate adding new msg-->
+          <div class="chat-form">
+            <textarea placeholder="Message Harvey Specter"></textarea>
+          </div>
+        </div>
+      </div>
+      <div id="channel_2" class="chatlogs">
+        <div class="chat-header">
+          <img class="user-photo" src="http://emilcarlsson.se/assets/rachelzane.png" alt="" />
+          <p class="name">Rachel Zane</p>
+          <i class="material-icons">close</i>
+        </div>
+        <div class="message-box">
+          <div class="messages">
+            <div class="chat friend">
+              <img class="user-photo" src="http://emilcarlsson.se/assets/rachelzane.png" alt="" />
+              <div class="message-block">
+                <p class="chat-message">Lorem ipsum dolor sit.</p>
+                <p class="time">02:12 pm</p>
+              </div>
+            </div>
+            <div class="chat friend">
+              <img class="user-photo" src="http://emilcarlsson.se/assets/rachelzane.png" alt="" />
+              <div class="message-block">
+                <p class="chat-message">Lorem ipsum dolor sit.</p>
+                <p class="time">02:12 pm</p>
+              </div>
+            </div>
+            <div class="date">Tuesday, dec-19</div>
+            <div class="chat self">
+              <div class="buttons">
+                <button>
+                  <i class="material-icons">edit</i>
+                </button>
+                <button>
+                  <i class="material-icons">delete_outline</i>
+                </button>
+              </div>
+              <div class="message-block">
+                <p class="chat-message">Lorem ipsum dolor sit.</p>
+                <p class="time">02:12 pm</p>
+              </div>
+            </div>
+          </div>
+          <div class="chat-form">
+            <textarea placeholder="Message Rachel Zane"></textarea>
+          </div>
+        </div>
+      </div>
+      <div id="channel_3" class="chatlogs">
+        <div class="chat-header">
+          <img class="user-photo" src="http://emilcarlsson.se/assets/donnapaulsen.png" alt="" />
+          <p class="name">Donna Paulsen</p>
+          <i class="material-icons">close</i>
+        </div>
+        <div class="message-box">
+          <div class="messages">
+            <div class="chat friend">
+              <img class="user-photo" src="http://emilcarlsson.se/assets/donnapaulsen.png" alt="" />
+              <div class="message-block">
+                <p class="chat-message">Lorem ipsum dolor sit.</p>
+                <p class="time">02:12 pm</p>
+              </div>
+            </div>
+            <div class="chat self">
+              <div class="message-block">
+                <p class="chat-message">Lorem ipsum dolor sit.</p>
+                <p class="time">02:12 pm</p>
+              </div>
+            </div>
+            <div class="date">Tuesday, dec-19</div>
+            <div class="chat self">
+              <div class="buttons">
+                <button>
+                  <i class="material-icons">edit</i>
+                </button>
+                <button>
+                  <i class="material-icons">delete_outline</i>
+                </button>
+              </div>
+              <div class="message-block">
+                <p class="chat-message">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias modi officia vitae, corporis architecto a eveniet autem quaerat suscipit quisquam.</p>
+                <p class="time">02:12 pm</p>
+              </div>
+            </div>
+          </div>
+          <div class="chat-form">
+            <textarea placeholder="Message Donna Paulsen"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

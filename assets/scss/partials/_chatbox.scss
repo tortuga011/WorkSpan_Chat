@@ -1,0 +1,170 @@
+.chatbox {
+  @include flex;
+  width: 500px;
+  min-width: 390px;
+  background: $white;
+}
+
+.chatlogs {
+  @include flex;
+  padding: 0 0 0 10px;
+  height: 100vh;
+}
+
+.chat-header {
+  display: flex;
+  padding: 10px 20px 10px 0;
+  border-bottom: 1px solid #ebebed;
+  align-items: center;
+  .user-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .name {
+    font-weight: bold;
+    padding: 0 20px;
+    letter-spacing: 1px;
+  }
+  i {
+    margin-left: auto;
+    cursor: pointer;
+    font-size: 26px;
+    color: #aeaeae;
+    &:hover {
+      color: #393e42;
+    }
+  }
+}
+
+.message-box {
+  @include flex;
+  .messages {
+    height: 75vh;
+    overflow: auto;
+    padding: 20px 10px 0 0;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background: rgba(0, 0, 0, .1);
+    }
+  }
+}
+
+.chat {
+  display: flex;
+  flex-flow: nowrap;
+  align-items: flex-start;
+  padding-bottom: 10px;
+  .chat-message {
+    padding: 10px;
+    margin: 5px 10px 0;
+    color: $msg_font_color;
+    font-size: 18px;
+  }
+}
+
+.friend {
+  .user-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  .chat-message {
+    background: $lightgray_background;
+    border-radius: 5px 5px 5px 0;
+    position: relative;
+    &:after {
+      @include triangle;
+      border-top: 10px solid $lightgray_background;
+      border-right: 10px solid transparent;
+      left: 0;
+      bottom: -10px;
+    }
+  }
+}
+
+.time {
+  display: table;
+  color: $gray;
+  padding: 10px 0 0 10px;
+}
+
+.self {
+  justify-content: flex-end;
+  .chat-message {
+    position: relative;
+    background: $lightblue_background;
+    border-radius: 5px 5px 0 5px;
+    &:after {
+      @include triangle;
+      border-style: solid;
+      border-width: 0 10px 10px 0;
+      border-color: transparent $lightblue_background transparent transparent;
+      margin-right: 10px;
+      margin-left: auto;
+      right: -10px;
+      bottom: -10px;
+    }
+  }
+  .time {
+    margin-left: auto;
+    margin-right: 10px;
+    &::after {
+      content: "check";
+      font-family: "Material Icons";
+      font-style: normal;
+      font-weight: normal;
+      color: #9BD6DD;
+      font-size: 22px;
+      display: table-cell;
+      vertical-align: bottom;
+    }
+  }
+}
+
+.date {
+  text-transform: uppercase;
+  color: $gray;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.message-block {
+  @include flex;
+}
+
+.chat-form {
+  border-top: 2px solid #ebebed;
+  margin-left: -10px;
+  textarea {
+    width: 100%;
+    resize: none;
+    padding: 10px;
+    border: transparent;
+    font-size: 18px;
+    &:focus {
+      background: $white;
+      outline: none;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  margin-top: 5px;
+  margin-right: -10px;
+  button {
+    padding: 5px;
+    cursor: pointer;
+    background: $white;
+    border-radius: 5px;
+    border: 1px solid $lightblue_background;
+    &:hover {
+      background: $lightblue_background;
+    }
+  }
+}
